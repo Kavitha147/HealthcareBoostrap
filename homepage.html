@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="tablink" onclick="openPage('Home', this, 'blue')">
+      Home
+    </button>
+    <button
+      class="tablink"
+      onclick="openPage('Login', this, 'blue')"
+      id="defaultOpen"
+    >
+      Login
+    </button>
+    <button class="tablink" onclick="openPage('Register', this, 'blue')">
+      Register
+    </button>
+    <button class="tablink" onclick="openPage('About', this, 'blue')">
+      About
+    </button>
+
+    <div id="Home" class="tabcontent">
+      <h2>HEALTH CARE CENTER</h2>
+      <p>
+        This health care centre helps you to reach out to the queries releated
+        to your problems
+      </p>
+    </div>
+
+    <div id="Login" class="tabcontent">
+      <form action="pts.html" method="POST">
+        <center>
+          <h1>PATIENT LOGIN</h1>
+          <table>
+            <tr>
+              <td>
+                UserName:<input
+                  required
+                  type="text"
+                  name="UserName"
+                  class="name"
+                  placeholder="   Enter UserName"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <br />Password:<input
+                  required
+                  type="password"
+                  name="Password"
+                  class="pass"
+                  placeholder="   Enter Password"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <br />
+                <center><button id="sub">LOGIN</button></center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <br />
+                <center>
+                  <span>New User?</span
+                  ><button id="sub" onclick="openPage('Register', this, )">
+                    Register
+                  </button>
+                </center>
+              </td>
+            </tr>
+          </table>
+        </center>
+      </form>
+    </div>
+
+    <div id="Register" class="tabcontent">
+      <form>
+        <center>
+          <h1>PATIENT REGISTER</h1>
+          <table>
+            <tr>
+              <td>
+                UserName:<input
+                  type="text"
+                  id="user"
+                  required
+                  name="UserName"
+                  placeholder="   Enter Username"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <br />Password:<input
+                  type="Password"
+                  name="Password"
+                  required
+                  id="pass"
+                  placeholder="   Enter Password"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <br />PhoneNo:<input
+                  type="number"
+                  name="PhoneNo"
+                  required
+                  id="phone"
+                  placeholder="     Enter PhoneNo"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <br />
+                <center>
+                  <input
+                    type="submit"
+                    name="submit"
+                    id="sub"
+                    value="REGISTER"
+                    onclick="openPage('Login', this, 'blue')"
+                  />
+                </center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <br />
+                <center>
+                  <button id="sub" onclick="openPage('Login', this, )">
+                    Back
+                  </button>
+                </center>
+              </td>
+            </tr>
+          </table>
+        </center>
+      </form>
+    </div>
+
+    <div id="About" class="tabcontent">
+      <h2>About</h2>
+      <p>This page help us to easily convey your problems to doctor</p>
+    </div>
+
+    <script>
+      function openPage(pageName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+      }
+
+      document.getElementById("defaultOpen").click();
+    </script>
+  </body>
+</html>
